@@ -1,29 +1,42 @@
 import { useState } from "react";
 import PageHero from "../components/PageHero";
 
+const STATUS = { IDLE: "idle", SENDING: "sending", SUCCESS: "success", ERROR: "error" };
+
 function ContactPage() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState(STATUS.IDLE);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm((current) => ({ ...current, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setStatus(STATUS.SENDING);
+    setErrorMessage("");
 
-    const subject = encodeURIComponent(
-      `Website inquiry from ${form.name || "624851.com visitor"}`,
-    );
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`,
-    );
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    window.location.href = `mailto:info@624851.com?subject=${subject}&body=${body}`;
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setStatus(STATUS.SUCCESS);
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      setErrorMessage(err.message);
+      setStatus(STATUS.ERROR);
+    }
   };
 
   return (
@@ -64,52 +77,78 @@ function ContactPage() {
               <p className="section-label">Contact form</p>
               <h2>Send a project inquiry.</h2>
               <p>
-                This form prepares an email to info@624851.com using your
-                device’s default mail app. It is intended for software project
-                inquiries, business tool requests, and AI-assisted workflow
-                discussions.
+                Fill out the form and your message will be sent directly to
+                info@624851.com. You can also reach out by email any time.
               </p>
             </div>
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <p className="form-notice">
-                Note: Submitting this form opens your device's default mail app
-                with a pre-filled message to info@624851.com. No data is sent to
-                a server.
-              </p>
-              <label className="field">
-                <span>Name</span>
-                <input
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-              <label className="field">
-                <span>Email</span>
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-              <label className="field">
-                <span>Message</span>
-                <textarea
-                  name="message"
-                  rows="6"
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-              <button className="button button-primary" type="submit">
-                Compose Email
-              </button>
-            </form>
+
+            {status === STATUS.SUCCESS ? (
+              <div className="form-success">
+                <p className="form-success-title">Message sent</p>
+                <p>
+                  Thanks for reaching out. You'll hear back at the email address
+                  you provided.
+                </p>
+                <button
+                  className="button button-secondary"
+                  style={{ marginTop: "1.25rem" }}
+                  onClick={() => setStatus(STATUS.IDLE)}
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit}>
+                {status === STATUS.ERROR && (
+                  <p className="form-error">
+                    {errorMessage}{" "}
+                    <a className="text-link" href="mailto:info@624851.com">
+                      Email us directly.
+                    </a>
+                  </p>
+                )}
+                <label className="field">
+                  <span>Name</span>
+                  <input
+                    type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                    disabled={status === STATUS.SENDING}
+                  />
+                </label>
+                <label className="field">
+                  <span>Email</span>
+                  <input
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    disabled={status === STATUS.SENDING}
+                  />
+                </label>
+                <label className="field">
+                  <span>Message</span>
+                  <textarea
+                    name="message"
+                    rows="6"
+                    value={form.message}
+                    onChange={handleChange}
+                    required
+                    disabled={status === STATUS.SENDING}
+                  />
+                </label>
+                <button
+                  className="button button-primary"
+                  type="submit"
+                  disabled={status === STATUS.SENDING}
+                >
+                  {status === STATUS.SENDING ? "Sending…" : "Send Message"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>
