@@ -19,7 +19,7 @@ function Layout({ children }) {
               <span className="brand-mark">624851</span>
               <span className="brand-copy">
                 <strong>624851 NB Inc.</strong>
-                <span>Software development and practical digital tools</span>
+                <span>Software development · Moncton, NB</span>
               </span>
             </NavLink>
             <nav className="site-nav" aria-label="Primary">
@@ -45,9 +45,8 @@ function Layout({ children }) {
             <div>
               <p className="footer-title">624851 NB Inc.</p>
               <p className="footer-text">
-                Independent Canadian software company building small apps,
-                internal tools, AI-assisted workflows, and practical digital
-                products.
+                Small software shop based in Moncton, New Brunswick. Products
+                and selected client work.
               </p>
               <p className="footer-text">
                 © {new Date().getFullYear()} 624851 NB Inc.

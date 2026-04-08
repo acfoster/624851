@@ -43,8 +43,8 @@ function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Get in touch about software projects, small business tools, and AI-assisted solutions."
-        intro="624851 NB Inc. is available for selected software development work involving practical web applications, internal tools, and lightweight digital products."
+        title="Get in touch."
+        intro="We're available for selected client work. Drop a message below or email directly."
       />
 
       <section className="section">
@@ -55,16 +55,14 @@ function ContactPage() {
               <a href="mailto:info@624851.com">info@624851.com</a>
             </h2>
             <p>
-              Reach out regarding software products, client projects, internal
-              tools, AI-assisted workflows, or lightweight web applications.
+              For project inquiries, questions, or anything else.
             </p>
           </article>
           <article className="contact-card">
             <p className="section-label">Location</p>
             <h2>Moncton, New Brunswick, Canada</h2>
             <p>
-              Independent Canadian software company serving practical digital
-              product and small-tool development needs.
+              Incorporated in New Brunswick. Available for remote work.
             </p>
           </article>
         </div>

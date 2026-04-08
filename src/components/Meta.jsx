@@ -2,43 +2,43 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const defaults = {
-  title: "624851 NB Inc. | Software Development and AI Tools",
+  title: "624851 NB Inc. | Software Development",
   description:
-    "624851 NB Inc. is a Moncton, New Brunswick software company building Ruby on Rails apps, internal tools, AI-assisted workflows, automations, and practical digital products.",
+    "Small software shop based in Moncton, New Brunswick. Products and selected client work.",
   image: "https://624851.com/og-image.svg",
   url: "https://624851.com",
 };
 
 const pageMeta = {
   "/": {
-    title: "624851 NB Inc. | Software Development and AI Tools",
+    title: "624851 NB Inc. | Software Development",
     description:
-      "Moncton, New Brunswick software company building practical web applications, internal tools, client tools, and AI-assisted solutions.",
+      "Small software shop in Moncton, NB. We build our own products and take on selected client work.",
   },
   "/about": {
     title: "About | 624851 NB Inc.",
     description:
-      "Learn about 624851 NB Inc., an independent Canadian software company focused on Ruby on Rails development, internal tools, and AI-enhanced workflows.",
+      "624851 NB Inc. is operated by Andrew Foster in Moncton, New Brunswick. Rails apps, native iOS development, and client work.",
   },
   "/projects": {
     title: "Projects | 624851 NB Inc.",
     description:
-      "Explore products and software work from 624851 NB Inc., including DivvyTrackr, GoChorez, TradeCheckr, GetSteady.today, Local Flow, and automation tools.",
+      "Software products and active builds from 624851 NB Inc., including GloveBoxGPS, GoChorez, TradeCheckr, GetSteady.today, and Local Flow.",
   },
   "/contact": {
     title: "Contact | 624851 NB Inc.",
     description:
-      "Contact 624851 NB Inc. in Moncton, New Brunswick about software projects, small business tools, and AI-assisted solutions.",
+      "Get in touch with 624851 NB Inc. about software projects and client work.",
   },
   "/privacy": {
     title: "Privacy Policy | 624851 NB Inc.",
     description:
-      "Privacy policy for 624851 NB Inc. covering website inquiries, business communications, and product-related contact handling.",
+      "Privacy policy for 624851 NB Inc. covering website inquiries, software products, and PIPEDA compliance.",
   },
   "/terms": {
     title: "Terms | 624851 NB Inc.",
     description:
-      "Terms for the 624851 NB Inc. website covering business information, acceptable use, and contact expectations.",
+      "Terms of use for the 624851 NB Inc. website.",
   },
 };
 
