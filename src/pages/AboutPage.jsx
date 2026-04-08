@@ -4,7 +4,6 @@ function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About"
         title="A small software company in Moncton, NB."
         intro="624851 NB Inc. builds software products and takes on selected client work. One developer, hands-on execution."
       />

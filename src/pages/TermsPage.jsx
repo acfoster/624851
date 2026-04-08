@@ -5,7 +5,6 @@ function TermsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Terms"
         title="Terms for the 624851 NB Inc. website."
         intro="This website is provided as a public business presence for 624851 NB Inc. and for general information about the company's software work and contact details."
       />

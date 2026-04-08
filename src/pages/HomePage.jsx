@@ -29,7 +29,6 @@ function HomePage() {
   return (
     <>
       <PageHero
-        eyebrow="Moncton, NB"
         title="Software products and development work."
         intro="624851 NB Inc. is a small software company based in Moncton, New Brunswick. We build our own products and take on selected client work."
         actions={

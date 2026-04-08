@@ -4,7 +4,6 @@ function PrivacyPage() {
   return (
     <>
       <PageHero
-        eyebrow="Privacy policy"
         title="Privacy information for 624851 NB Inc."
         intro="This page describes how 624851 NB Inc. handles website inquiries, direct email contact, basic business communications, and data practices across its software products."
       />

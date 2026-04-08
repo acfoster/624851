@@ -42,7 +42,6 @@ function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
         title="Get in touch."
         intro="We're available for selected client work. Drop a message below or email directly."
       />

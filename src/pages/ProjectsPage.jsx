@@ -5,7 +5,6 @@ function ProjectsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Work"
         title="Active products and ongoing projects."
         intro="A mix of our own products at various stages, plus the kinds of client work we take on."
       />
