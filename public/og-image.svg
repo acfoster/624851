@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="70" y="70" width="1060" height="490" rx="32" fill="#ffffff" stroke="#cbd5e1" />
+  <text x="120" y="240" fill="#0f172a" font-family="Georgia, serif" font-size="72" font-weight="700">624851 NB Inc.</text>
+  <text x="120" y="318" fill="#334155" font-family="Arial, sans-serif" font-size="34">Software development, Rails applications, internal tools,</text>
+  <text x="120" y="366" fill="#334155" font-family="Arial, sans-serif" font-size="34">AI-assisted workflows, and practical digital products.</text>
+  <text x="120" y="472" fill="#2563eb" font-family="Arial, sans-serif" font-size="28">Moncton, New Brunswick, Canada</text>
+</svg>
