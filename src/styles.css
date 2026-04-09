@@ -280,6 +280,7 @@ p {
   padding: 0.85rem 1.25rem;
   border-radius: 999px;
   font-weight: 600;
+  white-space: nowrap;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
